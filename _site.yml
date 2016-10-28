@@ -1,0 +1,12 @@
+name: "garbett.org"
+output_dir: "."
+navbar:
+  title: "garbett.org"
+  left:
+    - text: "No Direction"
+      href: index.html
+    - text: "Complete Unknown"
+      href: about.html
+output:
+  html_document:
+    theme: sandstone

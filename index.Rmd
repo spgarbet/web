@@ -1,0 +1,15 @@
+---
+title: "Oh, No. He's getting organized"
+---
+
+10/28/2016
+
+Beginning a revamp of my website, once again. I saw [Nick Stryer](http://nickstrayer.me/)'s presentation today on how to simply put together a static website. I knew most of the parts and pieces, but the simplicity attracted me. Especially considering I have broken my Erlang site and have to invest some time to fix it. I'm going to write a Postgresql export from Zotonic and see how far I can get with that.
+
+I think the really up side to all this, is a lot of my projects can just all get central hubbed through a static site. The github model of hosting is quite amazing for simple static sites.
+
+Nick used a photo of him yawning as an example. I've posting that here as a tribute, and because once you've posted something like that to the internet it'll probably end up a poster in your retirement home.
+
+<div class="figure">
+<img src="photos/nickyawn.jpg" alt="Nick Yawning" width="300" />
+</div>
