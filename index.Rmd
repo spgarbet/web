@@ -2,7 +2,67 @@
 title: "Oh, No. He's getting organized"
 ---
 
-10/28/2016
+# Julia and Parallel
+
+I'm working on an economic model of finding out the best strategy for patient testing with genomic panels and how it effects treatement. We used discrete event simulation, [simmer](http://r-simmer.org/) in R, and it's working well. The problem has become performance. Since most of the events we're interested in are rare events, the simulation size is up around simulating 4,000,000 patients to tease out enough resolution to make economic forecasts of impact as measured in expected cost and quality of life. We need to look at sensitivity of the model in the parameter space and find where the biggest benefits are, and what makes the model efficient or not. To do this requires around 200,000 model runs. This ends up meaning we need about a trillion simulations. Current speed is around 500 simulations/second. Which leaves me needing around 65 years of computing time. Fire up that ACCRE cluster!
+
+Or alternatively I could do something a bit more intelligent and optimize model execution. I've figured out that solutions of these models are all solveable via solving differential equations in queuing theory. I've even gone further and found that the general equation is representable as a age structured partial delay differential equation. Turns out these are difficult to solve, but fortunately for the project there is a subset of these problems that are solveable, and it just happens it's this set of problems. We came up with a simple test model, and have implemented that in DES, and I rewrote it as a numerical delay differential and used [deSolve](https://cran.r-project.org/web/packages/deSolve/deSolve.pdf) to crack it. Takes 11 seconds to numerically solve the model. That's the full solution with 1e-12 digits of resolution; the equivalent of infinite numbers of simulations. This puts it into the realm of taking 25 days of computing time to solve the sensitivity problem. Better, but not good enough.
+
+That was when I discovered [Julia](http://julialang.org/) in looking around for a compiled solution. I recoded the model, the resulting model code is arguably simpler than the R code. It runs a model 0.02 seconds once the Julia code is compiled (which it does on startup of execution--so there's a delay in getting going). Now we're talking an hour to run the sensitivity analysis. I've already done this and passed it into [Saltelli's Variance Based Method](https://github.com/LoLab-VU/varsens) and validated results. Was able over the last few days to do around 5 runs and debug a few things in the flow. Julia is certainly a powerful mathematical language. 
+
+The full model is not going to be as easy as the simple one. Probably closer to 0.2 seconds a run to solve. This is feasible, but I want more. I have 8 cores on my box and should be able to run a model in parallel using all that power to make it happen in short order. I thought it'd be a simple command `mclapply` from [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf). This is where is got weird. Julia doesn't follow the principle of least surprise. 
+
+I have this short example of what was actually required to get it to work:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+@everywhere module StuffToUseParallel
+
+  function solve_model(x)
+    2*x
+  end
+  
+  export solve_model
+  
+end # StuffToUseParallel
+
+using StuffToUseParallel
+
+x = SharedArray{Int}(100)
+# documentation says use @sync @parallel if you actually 
+# want it computed at the end of the loop
+# But that didn't work.
+futures = @parallel for i in 1:100
+  x[i] = solve_model(i)
+end
+
+# @sync didn't work, but this does
+for f in futures
+  fetch(f)
+end
+
+# Now it's safely available to use
+println(sum(x))
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+First I had a lot of functions, and they didn't exist in parallel threads unless I put `@everything` in front of every function. To get it to be available in multiple threads easily, I enclosed it in a `Module` and then used the `@everything` to make it available. Of course, since it's a Module it has to export the useful functions. Then you have to `using` the module, and now those functions are available in multiple threads.
+
+The documentation for Julia clearly showed that it was necessary to use a SharedArray, which didn't work for higher order datatypes. I had to use a flat array. If you have multiple values being returned, this gets ugly fast. The real frustration was that the `@sync` directive didn't actually do that. I had to put an explicit loop and fetch all the futures that were returned. Then the data was safe to use.
+
+That's a lot of boilerplate and several surprising little land mines along the way. While Julia is clearly a powerful language for solving mathematical models, the parallelism is a bit difficult compared with other higher level languages. I'm sure there's good reasons for having all these constructs, since one is directing a compiler towards making thread safe code. However, it just doesn't feel natural. Julia is exposing a lot of parallism concepts and this puts a lot of power in the programmers hands--*who knows what he's doing!* It'd really be great if there was a simple mode that just worked without all the extra directives. However, I'm satified--I ran a full sensitivity analysis of the simple model in 20 minutes on 8 cores. We should be able to achieve 2 hours for the full model with these numbers.
+
+By the way, Chris Rackauckas was incredibly helpful in getting me going. He authored the [`DifferentialEquation`](https://github.com/JuliaDiffEq/DifferentialEquations.jl) suite for Julia. Numerically my experience is this code is solid, blazingly fast, and very easy to use. 
+
+
+# Here it goes
+
+*03/15/2017*
+
+Well I bit the bullet and I'm going static page generation. A lot easier than dealing with code updates. Hosting is now trival from github. It'll take some time to resurrect old posts, but I've got the database backed up, and I just have to figure out how to decompress Zotonic assets.
+
+
+# Revamp Ideas
+
+*10/28/2016*
 
 Beginning a revamp of my website, once again. I saw [Nick Stryer](http://nickstrayer.me/)'s presentation today on how to simply put together a static website. I knew most of the parts and pieces, but the simplicity attracted me. Especially considering I have broken my Erlang site and have to invest some time to fix it. I'm going to write a Postgresql export from Zotonic and see how far I can get with that.
 

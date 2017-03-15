@@ -19,12 +19,11 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="site_libs/highlight/default.css"
-      type="text/css" />
-<script src="site_libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -94,6 +93,7 @@ button.code-folding-btn:focus {
 }
 </style>
 
+
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
@@ -150,7 +150,6 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -199,12 +198,59 @@ $(document).ready(function () {
 </div>
 
 
-<p>10/28/2016</p>
+<div id="julia-and-parallel" class="section level1">
+<h1>Julia and Parallel</h1>
+<p>I’m working on an economic model of finding out the best strategy for patient testing with genomic panels and how it effects treatement. We used discrete event simulation, <a href="http://r-simmer.org/">simmer</a> in R, and it’s working well. The problem has become performance. Since most of the events we’re interested in are rare events, the simulation size is up around simulating 4,000,000 patients to tease out enough resolution to make economic forecasts of impact as measured in expected cost and quality of life. We need to look at sensitivity of the model in the parameter space and find where the biggest benefits are, and what makes the model efficient or not. To do this requires around 200,000 model runs. This ends up meaning we need about a trillion simulations. Current speed is around 500 simulations/second. Which leaves me needing around 65 years of computing time. Fire up that ACCRE cluster!</p>
+<p>Or alternatively I could do something a bit more intelligent and optimize model execution. I’ve figured out that solutions of these models are all solveable via solving differential equations in queuing theory. I’ve even gone further and found that the general equation is representable as a age structured partial delay differential equation. Turns out these are difficult to solve, but fortunately for the project there is a subset of these problems that are solveable, and it just happens it’s this set of problems. We came up with a simple test model, and have implemented that in DES, and I rewrote it as a numerical delay differential and used <a href="https://cran.r-project.org/web/packages/deSolve/deSolve.pdf">deSolve</a> to crack it. Takes 11 seconds to numerically solve the model. That’s the full solution with 1e-12 digits of resolution; the equivalent of infinite numbers of simulations. This puts it into the realm of taking 25 days of computing time to solve the sensitivity problem. Better, but not good enough.</p>
+<p>That was when I discovered <a href="http://julialang.org/">Julia</a> in looking around for a compiled solution. I recoded the model, the resulting model code is arguably simpler than the R code. It runs a model 0.02 seconds once the Julia code is compiled (which it does on startup of execution–so there’s a delay in getting going). Now we’re talking an hour to run the sensitivity analysis. I’ve already done this and passed it into <a href="https://github.com/LoLab-VU/varsens">Saltelli’s Variance Based Method</a> and validated results. Was able over the last few days to do around 5 runs and debug a few things in the flow. Julia is certainly a powerful mathematical language.</p>
+<p>The full model is not going to be as easy as the simple one. Probably closer to 0.2 seconds a run to solve. This is feasible, but I want more. I have 8 cores on my box and should be able to run a model in parallel using all that power to make it happen in short order. I thought it’d be a simple command <code>mclapply</code> from <a href="https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf">parallel</a>. This is where is got weird. Julia doesn’t follow the principle of least surprise.</p>
+<p>I have this short example of what was actually required to get it to work:</p>
+<pre><code>@everywhere module StuffToUseParallel
+
+  function solve_model(x)
+    2*x
+  end
+  
+  export solve_model
+  
+end # StuffToUseParallel
+
+using StuffToUseParallel
+
+x = SharedArray{Int}(100)
+# documentation says use @sync @parallel if you actually 
+# want it computed at the end of the loop
+# But that didn&#39;t work.
+futures = @parallel for i in 1:100
+  x[i] = solve_model(i)
+end
+
+# @sync didn&#39;t work, but this does
+for f in futures
+  fetch(f)
+end
+
+# Now it&#39;s safely available to use
+println(sum(x))</code></pre>
+<p>First I had a lot of functions, and they didn’t exist in parallel threads unless I put <code>@everything</code> in front of every function. To get it to be available in multiple threads easily, I enclosed it in a <code>Module</code> and then used the <code>@everything</code> to make it available. Of course, since it’s a Module it has to export the useful functions. Then you have to <code>using</code> the module, and now those functions are available in multiple threads.</p>
+<p>The documentation for Julia clearly showed that it was necessary to use a SharedArray, which didn’t work for higher order datatypes. I had to use a flat array. If you have multiple values being returned, this gets ugly fast. The real frustration was that the <code>@sync</code> directive didn’t actually do that. I had to put an explicit loop and fetch all the futures that were returned. Then the data was safe to use.</p>
+<p>That’s a lot of boilerplate and several surprising little land mines along the way. While Julia is clearly a powerful language for solving mathematical models, the parallelism is a bit difficult compared with other higher level languages. I’m sure there’s good reasons for having all these constructs, since one is directing a compiler towards making thread safe code. However, it just doesn’t feel natural. Julia is exposing a lot of parallism concepts and this puts a lot of power in the programmers hands–<em>who knows what he’s doing!</em> It’d really be great if there was a simple mode that just worked without all the extra directives. However, I’m satified–I ran a full sensitivity analysis of the simple model in 20 minutes on 8 cores. We should be able to achieve 2 hours for the full model with these numbers.</p>
+<p>By the way, Chris Rackauckas was incredibly helpful in getting me going. He authored the <a href="https://github.com/JuliaDiffEq/DifferentialEquations.jl"><code>DifferentialEquation</code></a> suite for Julia. Numerically my experience is this code is solid, blazingly fast, and very easy to use.</p>
+</div>
+<div id="here-it-goes" class="section level1">
+<h1>Here it goes</h1>
+<p><em>03/15/2017</em></p>
+<p>Well I bit the bullet and I’m going static page generation. A lot easier than dealing with code updates. Hosting is now trival from github. It’ll take some time to resurrect old posts, but I’ve got the database backed up, and I just have to figure out how to decompress Zotonic assets.</p>
+</div>
+<div id="revamp-ideas" class="section level1">
+<h1>Revamp Ideas</h1>
+<p><em>10/28/2016</em></p>
 <p>Beginning a revamp of my website, once again. I saw <a href="http://nickstrayer.me/">Nick Stryer</a>’s presentation today on how to simply put together a static website. I knew most of the parts and pieces, but the simplicity attracted me. Especially considering I have broken my Erlang site and have to invest some time to fix it. I’m going to write a Postgresql export from Zotonic and see how far I can get with that.</p>
 <p>I think the really up side to all this, is a lot of my projects can just all get central hubbed through a static site. The github model of hosting is quite amazing for simple static sites.</p>
-<p>Nick used a photo of him yawning as an example. I’ve posting that here as a tribute, and because once you’ve posted something like that to the internet it’ll probably end up a poster in your retirment home.</p>
+<p>Nick used a photo of him yawning as an example. I’ve posting that here as a tribute, and because once you’ve posted something like that to the internet it’ll probably end up a poster in your retirement home.</p>
 <div class="figure">
 <p><img src="photos/nickyawn.jpg" alt="Nick Yawning" width="300" /></p>
+</div>
 </div>
 
 
@@ -215,9 +261,13 @@ $(document).ready(function () {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 
