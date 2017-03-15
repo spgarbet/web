@@ -10,9 +10,17 @@ Or alternatively I could do something a bit more intelligent and optimize model 
 
 That was when I discovered [Julia](http://julialang.org/) in looking around for a compiled solution. I recoded the model, the resulting model code is arguably simpler than the R code. It runs a model 0.02 seconds once the Julia code is compiled (which it does on startup of execution--so there's a delay in getting going). Now we're talking an hour to run the sensitivity analysis. I've already done this and passed it into [Saltelli's Variance Based Method](https://github.com/LoLab-VU/varsens) and validated results. Was able over the last few days to do around 5 runs and debug a few things in the flow. Julia is certainly a powerful mathematical language. 
 
-The full model is not going to be as easy as the simple one. Probably closer to 0.2 seconds a run to solve. This is feasible, but I want more. I have 8 cores on my box and should be able to run a model in parallel using all that power to make it happen in short order. I thought it'd be a simple command `mclapply` from [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf). This is where is got weird. Julia doesn't follow the principle of least surprise. 
+The full model is not going to be as easy as the simple one. Probably closer to 0.2 seconds a run to solve. This is feasible, but I want more. I have 8 cores on my box and should be able to run a model in parallel using all that power to make it happen in short order. I thought it'd be a simple command like `mclapply` from [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf) as shown in this R session:
 
-I have this short example of what was actually required to get it to work:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> library(parallel)
+> solve_model <- function(x) 2*x
+> x <- unlist(mclapply(1:100, mc.cores=8, function(i) {solve_model(i)}))
+> sum(x)
+[1] 10100
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is where is got weird. Julia doesn't follow the principle of least surprise when it comes to parallel processing. I have this short Julia example equivalent of the R example of what was actually required to get it to work:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 @everywhere module StuffToUseParallel
