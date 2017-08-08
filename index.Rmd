@@ -2,10 +2,43 @@
 title: "Oh, No. He's getting organized"
 ---
 
-*07/10/2017*
+# A Group Project
+*08/08/2017*
+
+
+In those far distant days when we wrestled with dinosaurs it was the senior year of my undergraduate experience. Our AI instructor assigned a group project and four of us met in that well air-conditioned computer lab around that warm glow of VT100s. There was an awkward bit of silence till Adam [names have been changed to protect the guilty] spoke up and said, "Well I don't understand how we all work together on a program."
+
+I spoke up and with surety said "Simple, we just divide the work into subroutines and each person does a subroutine and all we have to agree on is interfaces."
+
+At that moment I became team leader and stepped right over onto a slippery slope paved with equal parts of my own ignorance and arrogance. I grabbed a sheet of paper and quickly scribbled out 3 interfaces.
+
+> f(x) :: Filename -> Config
+>
+> g(x) :: Config -> (Scenario -> Score) -> Scenario
+>
+> h(x) :: Scenario -> Score
+
+With a definition of what each of those pieces were, and I said "None of those routines are too difficult to write, and if one needs to change the interface just communicate with your partner who is effected. I'll write the main loop and do the write-up and we can make quick work of this. What do you say we meet next week, same time and place?"
+
+There were nodes of agreement, and after fishing for some nickles [we called them bees] we made copies at the machine and everyone had a copy of the defined interface. Adam took f(x), Billy took g(x), and Carmen took h(x). I knew that all I had to do was write a trival function to tie it together and fill in the blacks on a piece of paper, delegation and leadership has its perks afterall.
+
+I wrote my routine and headed off to Tulane's infamous Boot to congratulate myself on such a brilliant piece of work.
+
+> print g(f(ARGV[1]), h)
+
+The next week came and we met again to stitch it all together. Adam said, "I wanted to really understand what made g(x) needed so I wrote that but couldn't figure out the proper regexs to make the file reading work so I don't have f(x)."
+
+Billy spoke and said, "I didn't like the config definition as it didn't work for me so I wrote something entirely different and the core algorithm didn't interest me so I did something else the professor didn't ask for. So I have J(x). 
+
+Carmen spoke and said, "I don't have time for this, I was hoping one of you would have done my work already out of curiosity."
+
+There were odd stares around the table. The realization as to why we were assigned a group project began to sink in with me. Success in development teams is greatly impacted by other factors than technical prowess. It's really about about communication and following interface specifications, something none of us had learned to date. It's also about cutting losses. We still had another week, so I said "Everyone email me your code and I think I can make it work. Let's meet in a week." Being the leader also means you get to do what doesn't get done.
+
+I met up with Adam later. I worked with him on the regexs. The scoring function was trivial. We got his version working fairly quickly. The next meeting we all signed off and turned it in. Got an A, many teams never made it over the finish line. This small exercise I've seen repeated over and over on larger and larger scales of money and resources. Small group projects with definable interfaces are an incredible learning tool.
+
 
 # UseR!2017 Notes
-
+*07/10/2017*
 Vanderbilt sponsored a trip for me to Brussels to attend UseR!2017. This is a loose collection of my notes from the conference.
 
 I met a Wolfgang from Austria who does clincial statistics on general medicine. Showed him my slides of tangram and he was very interested and said he would be watching the project as he thought it could be very useful to him. Later had dinner with him. He was mortified when I described Volka's Fire in the Lake boardgame. "Why would anyone ever want to play such a monstrocity?" I really hope to get in touch with him and get tangram to help his research.
