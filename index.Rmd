@@ -26,7 +26,7 @@ For those wanting all the details, take a look at my [curriculum vitae(CV)](phot
 <img src="photos/green_wave.png" alt="Roll Wave!" width="300" />
 </span>
 
-I did my undergraduate at Tulane University in New Orleans in electrical engineering and computer science. I worked for several years at TVA and applied combinatorial optimization to coal burning and linear programming to running the reservoir system. The program led to a 2% increase in coal burn efficiency world wide leading to massive savings--and lower power bills for all.
+I did my undergraduate at Tulane University in New Orleans in electrical engineering and computer science. I worked for several years at TVA and applied combinatorial optimization to coal burning and linear programming to running the reservoir system. The program led to an ~2% increase in coal burn efficiency world wide for multiple furnace installations leading to massive savings--and lower power bills for all.
 
 <span class="marginnote shownote">
 <img src="photos/air-force-one.JPG" alt="Air Force One" width="300" />
