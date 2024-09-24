@@ -1,24 +1,49 @@
 ---
-title: "Short Bio"
+title: "Shawn Garbett"
+output:
+  tufte::tufte_html: default
 ---
 
-<div class="figure">
+```{r setup, include=FALSE}
+library(tufte)
+# invalidate cache when the tufte version changes
+knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+```
+
+<span class="marginnote shownote">
 <img src="photos/garbetsp.jpg" alt="Shawn Goofing Around" width="300" />
-</div>
+</span>
 
 _"The crux of the biscuit is the apostrophe."_ --Frank Zappa
 
-## About Me
 
-I graduated from Penn State in August 2014 with an M.S. in statistics. I did my undergraduate at Tulane University in New Orleans in electrical engineering and computer science. I worked for several years at TVA and applied combinatorial optimization to coal burning and linear programming to running the reservoir system. The program led to a 2% increase in coal burn efficiency world wide leading to massive savings--and lower power bills for all.
+For those wanting all the details, take a look at my [curriculum vitae(CV)](photos/spgarbet-cv.pdf). To contact me decode this puzzle: 'shawn \<dot\> garbett \<at\> vumc.org' or 'shawn \<at\> garbett.org' for personal correspondence.
+
+## The Long and Short of It
+
+<span class="marginnote shownote">
+<img src="photos/green_wave.png" alt="Roll Wave!" width="300" />
+</span>
+
+I did my undergraduate at Tulane University in New Orleans in electrical engineering and computer science. I worked for several years at TVA and applied combinatorial optimization to coal burning and linear programming to running the reservoir system. The program led to a 2% increase in coal burn efficiency world wide leading to massive savings--and lower power bills for all.
+
+<span class="marginnote shownote">
+<img src="photos/air-force-one.JPG" alt="Air Force One" width="300" />
+</span>
 
 Worked as a consultant for many years, of which the capstone project was working for Air Force One through Walter Reed Hospital. It's a great honor when one's software is part of the Air Force One tooling--and the first closed loop medical device approved by the Food and Drug Administration.
 
-Got hired full time at Vanderbilt's Cancer Biology to maintain math models of cancer progression and help run an automated microscope. Working with the microscope data, it led me to statistics as the best means to interpret the data for the lab. I discovered a new passion in statistics, and went back and got my masters (which changed my philosophical viewpoint of the world). This has led me to becoming faculty in [Biostatistics](https://www.vumc.org/biostatistics/vanderbilt-department-biostatistics) at [Vanderbilt University Medical Center](https://www.vumc.org/main/home).
 
-I love playing piano, board games, modeling, reading scifi, programming. I'm an NTP according Myers-Briggs, neither an introvert nor an extrovert. One theme through all these years is modeling--whether it be simulating nuclear magnetic resonance or putting together, playing an abstract simulation game or building a scale car and painting it.
 
-For those wanting all the details, take a look at [curriculum vitae(CV)](photos/spgarbet-cv.pdf). Contact me by decoding this puzzle: shawn \<dot\> garbett \<at\> vumc.org. 
+Got hired full time at Vanderbilt's Cancer Biology to maintain math models of cancer progression and help run an automated microscope. Working with the microscope data, it led me to statistics as the best means to interpret the data for the lab. I discovered a new passion in statistics, and went back and got my masters at Penn State in 2014. This has led me to becoming faculty in [Biostatistics](https://www.vumc.org/biostatistics/vanderbilt-department-biostatistics) at [Vanderbilt University Medical Center](https://www.vumc.org/main/home).
+
+<span class="marginnote shownote">
+<img src="photos/Parthenon-Dusk.jpg" alt="Nashville Parthenon" width="300" />
+</span>
+
+I love playing piano, board games, modeling, reading sci fi, programming. I'm an NTP according Myers-Briggs, neither an introvert nor an extrovert. One theme through all these years is modeling--whether it be simulating nuclear magnetic resonance or putting together, playing an abstract simulation game or building a scale car and painting it.
+
 
 ## Open Source
 
