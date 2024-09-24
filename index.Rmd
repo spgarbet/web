@@ -50,7 +50,7 @@ I love playing piano, board games, modeling, reading sci fi, programming. I'm an
 * [emg](https://github.com/spgarbet/emg/) A random mixture distribution function package for R.
 * [acepack](https://github.com/vubiostat/acepack) Variance stabilization routines in R. 
 * [yaml](https://github.com/vubiostat/r-yaml) Yaml 1.1 interface for R. A strong [dependency](https://xkcd.com/2347/) for the modern R community of packages.
-* [This website](https://github.com/spgarbet/web)^[Website was made using basic [Markdown hosted on Github](https://www.andreashandel.com/posts/2021-01-11-simple-github-website/index.html) with [Tufte style](https://rstudio.github.io/tufte/)].
+* [This website](https://github.com/spgarbet/web)^[Website was made using basic [Markdown hosted on Github](https://www.andreashandel.com/posts/2021-01-11-simple-github-website/index.html) with [Tufte style](https://rstudio.github.io/tufte/).].
 
 ## Publications
 
