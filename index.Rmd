@@ -35,8 +35,7 @@ I did my undergraduate at Tulane University in New Orleans in electrical enginee
 Worked as a consultant for many years, of which the capstone project was working for Air Force One through Walter Reed Hospital. It's a great honor when one's software is part of the Air Force One tooling--and the first closed loop medical device approved by the Food and Drug Administration.
 
 
-
-Got hired full time at Vanderbilt's Cancer Biology to maintain math models of cancer progression and help run an automated microscope. Working with the microscope data, it led me to statistics as the best means to interpret the data for the lab. I discovered a new passion in statistics, and went back and got my masters at Penn State in 2014. This has led me to becoming faculty in [Biostatistics](https://www.vumc.org/biostatistics/vanderbilt-department-biostatistics) at [Vanderbilt University Medical Center](https://www.vumc.org/main/home).
+I was hired hired full time in Vanderbilt's Cancer Biology department to maintain math models of cancer progression and help run an automated microscope. Working with the microscope data, it led me to statistics as the best means to interpret the data for the lab. I discovered a new passion in statistics, and went back and got my masters at Penn State in 2014. This has led me to becoming faculty in [Biostatistics](https://www.vumc.org/biostatistics/vanderbilt-department-biostatistics) at [Vanderbilt University Medical Center](https://www.vumc.org/main/home).
 
 <span class="marginnote shownote">
 <img src="photos/Parthenon-Dusk.jpg" alt="Nashville Parthenon" width="300" />
@@ -51,7 +50,7 @@ I love playing piano, board games, modeling, reading sci fi, programming. I'm an
 * [emg](https://github.com/spgarbet/emg/) A random mixture distribution function package for R.
 * [acepack](https://github.com/vubiostat/acepack) Variance stabilization routines in R. 
 * [yaml](https://github.com/vubiostat/r-yaml) Yaml 1.1 interface for R. A strong [dependency](https://xkcd.com/2347/) for the modern R community of packages.
-* [This website](https://github.com/spgarbet/web) hosted on github. 
+* [This website](https://github.com/spgarbet/web)^[Website was made using basic [Markdown hosted on github](https://www.andreashandel.com/posts/2021-01-11-simple-github-website/index.html) with [tufte style](https://rstudio.github.io/tufte/)].
 
 ## Publications
 
