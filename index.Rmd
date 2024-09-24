@@ -43,13 +43,14 @@ I was hired hired full time in Vanderbilt's Cancer Biology department to create 
 
 I love playing piano, board games, modeling, reading sci fi, programming. I'm an NTP according Myers-Briggs, neither an introvert nor an extrovert. One theme through all these years is modeling--whether it be simulating nuclear magnetic resonance or putting together, playing an abstract simulation game or building a scale car and painting it.
 
+Fluent in a wide variety of programming languages and technology stacks. However, what I really enjoy is formally typed languages like Haskell. It's incredible that via the [Curry-Howard correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) each program is a witness to the proof of that program's type. That type may be something utterly useless and broken, but one has never the less proved it.^[If we only knew what [it](https://youtu.be/5DlTexEXxLQ?si=xy3wOmpC7IJ2_sOg) was.] Dependent type systems of proof via [Homotopy Type Theory](https://homotopytypetheory.org/) is a personal fascination.
 
 ## Open Source
 
 * [redcapAPI](https://github.com/vubiostat/redcapAPI) An R interface to VUMC main data collection platform.
 * [emg](https://github.com/spgarbet/emg/) A random mixture distribution function package for R.
 * [acepack](https://github.com/vubiostat/acepack) Variance stabilization routines in R. 
-* [yaml](https://github.com/vubiostat/r-yaml) Yaml 1.1 interface for R. A strong [dependency](https://xkcd.com/2347/) for the modern R community of packages.
+* [yaml](https://github.com/vubiostat/r-yaml) A [YAML 1.1](https://yaml.org/spec/1.1/) interface for R. A strong [dependency](https://xkcd.com/2347/) for the modern R community of packages.
 * [This website](https://github.com/spgarbet/web)^[Website was made using basic [Markdown hosted on Github](https://www.andreashandel.com/posts/2021-01-11-simple-github-website/index.html) with [Tufte style](https://rstudio.github.io/tufte/).].
 
 ## Publications
