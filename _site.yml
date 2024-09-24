@@ -3,10 +3,10 @@ output_dir: "."
 navbar:
   title: "garbett.org"
   left:
-    - text: "No Direction"
-      href: index.html
     - text: "Complete Unknown"
       href: about.html
+    - text: "No Direction Home"
+      href: index.html
 output:
   html_document:
     theme: sandstone
