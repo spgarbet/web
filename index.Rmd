@@ -42,11 +42,13 @@ I was hired hired full time in Vanderbilt's Cancer Biology department to create 
 
 ## The Long and Short of It
 
-I am infinitely curious and highly resourceful. I love playing piano, board games, modeling, reading sci fi, and programming. One theme through all these years is modeling--whether it be simulating nuclear magnetic resonance, playing an abstract simulation game or building a scale car and painting it.
+I am infinitely curious and highly resourceful. I love playing piano^[_Preciso Me Encontrar_ performed by Buffy Rhea and myself.<audio controls><source src="photos/preciso.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio>], board games, modeling, reading sci fi, and programming. One theme through all these years is modeling--whether it be simulating nuclear magnetic resonance, playing an abstract simulation game or building a scale car and painting it.
 
 Fluent in a wide variety of programming languages and technology stacks. However, what I really enjoy is formally typed languages like Haskell. It's incredible that via the [Curry-Howard correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) each program is a witness to the proof of that program's type. That type may be something utterly useless and broken, but one has never the less proved it.^[If we only knew what [it](https://youtu.be/5DlTexEXxLQ?si=xy3wOmpC7IJ2_sOg) was.] Dependent type systems of proof via [Homotopy Type Theory](https://homotopytypetheory.org/) is a personal fascination.
 
-If one needs predictive or explanatory statistical data science models^[Oddly now called AI by many folks] of data; this I can deliver. Understanding applied economic decision making with dimensions of cost and effectiveness is a specialty. 
+If one needs predictive or explanatory statistical data science models^[Currently referred to as artificial intelligence in the press at present.] of data; this I can deliver. Applied economic decision making with dimensions of cost and effectiveness is a specialty.
+
+_Send me your data!_
 
 ## Open Source
 
