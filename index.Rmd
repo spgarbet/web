@@ -35,7 +35,7 @@ I did my undergraduate at Tulane University in New Orleans in electrical enginee
 Worked as a consultant for many years, of which the capstone project was working for Air Force One through Walter Reed Hospital. It's a great honor when one's software is part of the Air Force One tooling--and the first closed loop medical device approved by the Food and Drug Administration.
 
 
-I was hired hired full time in Vanderbilt's Cancer Biology department to maintain math models of cancer progression and help run an automated microscope. Working with the microscope data, it led me to statistics as the best means to interpret the data for the lab. I discovered a new passion in statistics, and went back and got my masters at Penn State in 2014. This has led me to becoming faculty in [Biostatistics](https://www.vumc.org/biostatistics/vanderbilt-department-biostatistics) at [Vanderbilt University Medical Center](https://www.vumc.org/main/home).
+I was hired hired full time in Vanderbilt's Cancer Biology department to create math models of cancer progression and help run an automated microscope. Working with the microscope data, it led me to statistics as the best means to interpret the data for the lab. I discovered a new passion in statistics, and went back and got my masters at Penn State in 2014. This has led me to becoming faculty in [Biostatistics](https://www.vumc.org/biostatistics/vanderbilt-department-biostatistics) at [Vanderbilt University Medical Center](https://www.vumc.org/main/home).
 
 <span class="marginnote shownote">
 <img src="photos/Parthenon-Dusk.jpg" alt="Nashville Parthenon" width="300" />
