@@ -11,7 +11,7 @@
 
 
 
-<title>Oh, No. He’s getting organized</title>
+<title>Short Bio</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -243,10 +243,10 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="about.html">Complete Unknown</a>
+  <a href="index.html">Complete Unknown</a>
 </li>
 <li>
-  <a href="index.html">No Direction Home</a>
+  <a href="stray-thoughts.html">No Direction Home</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -260,352 +260,171 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Oh, No. He’s getting organized</h1>
+<h1 class="title toc-ignore">Short Bio</h1>
 
 </div>
 
 
-<p>This is a rarely updated bin of stray thoughts.</p>
-<div id="a-group-project" class="section level1">
-<h1>A Group Project</h1>
-<p><em>08/08/2017</em></p>
-<p>In those far distant days when we wrestled with dinosaurs it was the
-senior year of my undergraduate experience. Our AI instructor assigned a
-group project and four of us met in that well air-conditioned computer
-lab around that warm glow of VT100s. There was an awkward bit of silence
-till Adam [names have been changed to protect the guilty] spoke up and
-said, “Well I don’t understand how we all work together on a
-program.”</p>
-<p>I spoke up and with surety said “Simple, we just divide the work into
-subroutines and each person does a subroutine and all we have to agree
-on is interfaces.”</p>
-<p>At that moment I became team leader and stepped right over onto a
-slippery slope paved with equal parts of my own ignorance and arrogance.
-I grabbed a sheet of paper and quickly scribbled out 3 interfaces.</p>
-<blockquote>
-<p>f(x) :: Filename -&gt; Config</p>
-<p>g(x) :: Config -&gt; (Scenario -&gt; Score) -&gt; Scenario</p>
-<p>h(x) :: Scenario -&gt; Score</p>
-</blockquote>
-<p>With a definition of what each of those pieces were, and I said “None
-of those routines are too difficult to write, and if one needs to change
-the interface just communicate with your partner who is effected. I’ll
-write the main loop and do the write-up and we can make quick work of
-this. What do you say we meet next week, same time and place?”</p>
-<p>There were nodes of agreement, and after fishing for some nickles [we
-called them bees] we made copies at the machine and everyone had a copy
-of the defined interface. Adam took f(x), Billy took g(x), and Carmen
-took h(x). I knew that all I had to do was write a trival function to
-tie it together and fill in the blacks on a piece of paper, delegation
-and leadership has its perks afterall.</p>
-<p>I wrote my routine and headed off to Tulane’s infamous Boot to
-congratulate myself on such a brilliant piece of work.</p>
-<blockquote>
-<p>print g(f(ARGV[1]), h)</p>
-</blockquote>
-<p>The next week came and we met again to stitch it all together. Adam
-said, “I wanted to really understand what made g(x) needed so I wrote
-that but couldn’t figure out the proper regexs to make the file reading
-work so I don’t have f(x).”</p>
-<p>Billy spoke and said, “I didn’t like the config definition as it
-didn’t work for me so I wrote something entirely different and the core
-algorithm didn’t interest me so I did something else the professor
-didn’t ask for. So I have J(x).</p>
-<p>Carmen spoke and said, “I don’t have time for this, I was hoping one
-of you would have done my work already out of curiosity.”</p>
-<p>There were odd stares around the table. The realization as to why we
-were assigned a group project began to sink in with me. Success in
-development teams is greatly impacted by other factors than technical
-prowess. It’s really about about communication and following interface
-specifications, something none of us had learned to date. It’s also
-about cutting losses. We still had another week, so I said “Everyone
-email me your code and I think I can make it work. Let’s meet in a
-week.” Being the leader also means you get to do what doesn’t get
-done.</p>
-<p>I met up with Adam later. I worked with him on the regexs. The
-scoring function was trivial. We got his version working fairly quickly.
-The next meeting we all signed off and turned it in. Got an A, many
-teams never made it over the finish line. This small exercise I’ve seen
-repeated over and over on larger and larger scales of money and
-resources. Small group projects with definable interfaces are an
-incredible learning tool.</p>
-</div>
-<div id="user2017-notes" class="section level1">
-<h1>UseR!2017 Notes</h1>
-<p><em>07/10/2017</em> Vanderbilt sponsored a trip for me to Brussels to
-attend UseR!2017. This is a loose collection of my notes from the
-conference.</p>
-<p>I met a Wolfgang from Austria who does clincial statistics on general
-medicine. Showed him my slides of tangram and he was very interested and
-said he would be watching the project as he thought it could be very
-useful to him. Later had dinner with him. He was mortified when I
-described Volka’s Fire in the Lake boardgame. “Why would anyone ever
-want to play such a monstrocity?” I really hope to get in touch with him
-and get tangram to help his research.</p>
-<p>Attended Martyn Plummer’s JAGS tutorial. It was very well done.
-Martyn is a natural educator and very welcoming and engaging. The slides
-and exercises are provided at tinyurl.com/yca2soe5. He was asked about
-comparing it with Stan. He did, but ended with this quote: “All the cool
-kids are using Julia, so why not do that instead?” JAGS looks like a
-really nice set of tools for Bayesian modeling.</p>
-<p>Met an Edvin from Leiden on the bus and we discussed financial risk
-models. He had a very interesting project. I shared with him my
-<code>spectral</code> ideas for treatment of a Cauchy as a sum of
-normals to estimate within a percentage of desired risk.</p>
-<p>Met an Ian Lyttle from Scheinder electric. They are using R to model
-a good number of things about their product line, and are interfacing
-internally with their company via Shiny. Shiny comes up many many times
-for the rest of the conference. Overall an interesting presentation. He
-said he sometimes comes to the Smyrna plant near Nashville. He ended up
-out socializing with Lucy and Nic, so I think we’ll be hearing more from
-him.</p>
-<p>Overall, the corporate presence was more than last year. Microsoft
-and Oracle have both discovered the power of R and are doing everything
-they can to pull companies into their R offerings. They were given for
-the most part the main hall lectures which unsurprisingly were mostly
-empty while the Shiny track was standing room only out the door. Shiny
-was the hot technology in R at this conference. I thought about why this
-was, and having experience about 20 web frameworks I think the
-programmatic interface for Shiny is incredibly easy and easy to extend.
-It’s performance as a web server is terrible in comparison to most
-frameworks, but for low volume applications it works quite well. There
-was an opening Shiny talk which was supposed to be about scaling which
-covered none of that, and the questions got tense demanding details
-about scaling.</p>
-<p>There was no employment opportunity posting board. If anyone
-mentioned they were in the market for a job they got about 3 offers
-before they turned around. Demand for R programmers is very high. I got
-an unsolicited offer.</p>
-<p>On a personal note, I was able to make the trip without a migraine
-and for someone with a severe migraine disorder triggered by sleep
-disturbances this was no small feat. I adjusted my sleep cycle over days
-going and over the days returning and the strategy worked. I did get ill
-on the first of the conference during the JAGS tutorial and feared about
-missing more but after a fever/etc it passed and I was back in the
-saddle for Day 2. Martyn’s talk on JAGS was really nice even though I
-was in poor spirits. I spoke with Martyn afterward and he was
-disappointed that Frank was not at the meeting.</p>
-<p>Every person I showed my slides on my phone about tangram split into
-two categories, unimpressed and their work was non-clinical or ‘I need
-that NOW!’ and they do clinical work. I spoke with Tom and we need to
-find a conference to present at that overlaps clinical and statistical.
-I also thought hard about what I could have done to get a talk (there
-were some unimpressive talks) and I think the abstract needs a complete
-overhaul and some more marketing over time to build up a user base. The
-two things that people wanted most were LaTeX and Word interfaces, so
-the current work cycle towards a full stack implementation should
-continue.</p>
-<p>Future ideas for tangram that I had at the meeting. The first is that
-the parser should support R formula syntax 100% and be useful outside
-the library as a formula parser. I spoke some with Uwe and he knew of no
-Backus-Naur (BNF) documentation of the formula parser. He said read the
-FORTRAN source. I think I’m going to have to, and create the BNF
-document myself and Uwe said the core team would love it documented. The
-internal parser makes assumptions about the semantics of the formula and
-isn’t easily used as an abstract syntax tree the way it’s coded.</p>
-<p>Secondly, talking with the RStudio folks they were saddened to hear
-that Jeff had left us and wanted to contact him about job opportunities.
-They said that pandoc supported Word natively. I thought I tried this
-and it didn’t work well, but I’m going to give it another try. What is
-really needed in this context is a traceability key that can be added as
-a comment. They said they thought the pandoc team would be open to
-adding such a small extension, and then I could modify the tangram
-framework to work directly with pandoc–this would be ideal! The
-possibilities such a tiny modification to pandoc open up are enormous
-for traceability.</p>
-<p>I’m working towards finishing out LaTeX support. I have a UNICODE to
-LaTeX map for use in R defined by merging three sources here: <a
-href="https://github.com/spgarbet/tangram/blob/master/R/render-latex-map.R"
-class="uri">https://github.com/spgarbet/tangram/blob/master/R/render-latex-map.R</a>.
-This I think would be useful in a variety of contexts. In general I’m
-going to create support for a subset of Rmd to LaTeX for use in the
-library. The biggest issue I’ve had in that department is that Rmd does
-not support superscript / subscript so I’m toying with including the
-LaTeX definitions in their raw form.</p>
-<p>There was an interesting presentation of <a
-href="https://cran.r-project.org/package=rags2ridges">rags2ridges</a>
-which was said to find network relationships in a more robust manner
-than lasso. A paper is published on the performance of the algorithm. In
-general a very exciting piece of work, and I need to know more about
-this as network discovery is something of interest to me.</p>
-<p>There was a really nice visual presentation of clusters by Agnieszka
-Sitko using <a
-href="https://cran.r-project.org/package=factorMerger">factorMerger</a>.
-One of the methods used likelihood ratios to determine branching. See
-the <a href="arxiv.org/abs/1505.04008">paper</a>.</p>
-<p>Thomas Petzhold had the definitive growth rate package in R. It would
-take a growth rate model from differential equations, or any of several
-formulic ones such as Gompertz or logistic and allow for a regression
-over data sets. Really a wonderful growth rate package. The ‘fracprolif’
-package should just be folded into his.</p>
-<p>Saw a presentation on Multiple Correspondence Analys which was billed
-as ‘PCA on categorical information’ which could prove useful at
-somepoint.</p>
-<p>I got to have a meeting with Bart Smeets and Iñaki Úcar and they are
-doing some wonderful work on ‘simmer’. They showed me the new package
-‘simmer.optim’ which optimizes parameters from a simmer model. I need to
-explore this further.</p>
-<p>simmer.optim can run any javascript inside R.</p>
-<p>There were also some psychometrics presentations that had tools in
-Shiny for evaluating test performances over a student body. This may be
-of interest to our graduate program.</p>
-<p>As an aside I saw this on twitter (<a
-href="https://twitter.com/R_Programming/status/885084780777353216"
-class="uri">https://twitter.com/R_Programming/status/885084780777353216</a>),
-which I think tangram can do already and if not with very little
-modification can do it in all the rendering formats. They had a much
-larger team that was thrown at the problem. Note how well they marketed
-what they’ve done. I need to wrap up and write a short paper for the R
-Journal.</p>
-</div>
-<div id="julia-and-parallel" class="section level1">
-<h1>Julia and Parallel</h1>
-<p><em>03/15/2017</em></p>
-<p>I’m working on an economic model of finding out the best strategy for
-patient testing with genomic panels and how it effects treatment. We
-used discrete event simulation, <a
-href="http://r-simmer.org/">simmer</a> in R, and it’s working well. The
-problem has become performance. Since most of the events we’re
-interested in are rare events, the simulation size is up around
-simulating 4,000,000 patients to tease out enough resolution to make
-economic forecasts of impact as measured in expected cost and quality of
-life. We need to look at sensitivity of the model in the parameter space
-and find where the biggest benefits are, and what makes the model
-efficient or not. To do this requires around 200,000 model runs. This
-ends up meaning we need about a trillion simulations. Current speed is
-around 500 simulations/second. Which leaves me needing around 65 years
-of computing time. Fire up that ACCRE cluster!</p>
-<p>Or alternatively I could do something a bit more intelligent and
-optimize model execution. I’ve figured out that solutions of these
-models are all solvable via solving differential equations in queuing
-theory. I’ve even gone further and found that the general equation is re
-presentable as a age structured partial delay differential equation.
-Turns out these are difficult to solve, but fortunately for the project
-there is a subset of these problems that are solvable, and it just
-happens it’s this set of problems. We came up with a simple test model,
-and have implemented that in DES, and I rewrote it as a numerical delay
-differential and used <a
-href="https://cran.r-project.org/web/packages/deSolve/deSolve.pdf">deSolve</a>
-to crack it. Takes 11 seconds to numerically solve the model. That’s the
-full solution with 1e-12 digits of resolution; the equivalent of
-infinite numbers of simulations. This puts it into the realm of taking
-25 days of computing time to solve the sensitivity problem. Better, but
-not good enough.</p>
-<p>That was when I discovered <a href="http://julialang.org/">Julia</a>
-in looking around for a compiled solution. I recoded the model, the
-resulting model code is arguably simpler than the R code. It runs a
-model 0.02 seconds once the Julia code is compiled (which it does on
-start up of execution–so there’s a delay in getting going). Now we’re
-talking an hour to run the sensitivity analysis. I’ve already done this
-and passed it into <a
-href="https://github.com/LoLab-VU/varsens">Saltelli’s Variance Based
-Method</a> and validated results. Was able over the last few days to do
-around 5 runs and debug a few things in the flow. Julia is certainly a
-powerful mathematical language.</p>
-<p>The full model is not going to be as easy as the simple one. Probably
-closer to 0.2 seconds a run to solve. This is feasible, but I want more.
-I have 8 cores on my box and should be able to run a model in parallel
-using all that power to make it happen in short order. I thought it’d be
-a simple command like <code>mclapply</code> from <a
-href="https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf">parallel</a>
-as shown in this R session:</p>
-<pre><code>&gt; library(parallel)
-&gt; solve_model &lt;- function(x) 2*x
-&gt; x &lt;- unlist(mclapply(1:100, mc.cores=8, function(i) {solve_model(i)}))
-&gt; sum(x)
-[1] 10100</code></pre>
-<p>This is where is got weird. Julia doesn’t follow the principle of
-least surprise when it comes to parallel processing. I have this short
-Julia example equivalent of the R example of what was actually required
-to get it to work:</p>
-<pre><code>@everywhere module StuffToUseParallel
-
-  function solve_model(x)
-    2*x
-  end
-  
-  export solve_model
-  
-end # StuffToUseParallel
-
-using StuffToUseParallel
-
-x = SharedArray{Int}(100)
-# documentation says use @sync @parallel if you actually 
-# want it computed at the end of the loop
-# But that didn&#39;t work.
-futures = @parallel for i in 1:100
-  x[i] = solve_model(i)
-end
-
-# @sync didn&#39;t work, but this does
-for f in futures
-  fetch(f)
-end
-
-# Now it&#39;s safely available to use
-println(sum(x))</code></pre>
-<p>First I had a lot of functions, and they didn’t exist in parallel
-threads unless I put <code>@everything</code> in front of every
-function. To get it to be available in multiple threads easily, I
-enclosed it in a <code>Module</code> and then used the
-<code>@everything</code> to make it available. Of course, since it’s a
-Module it has to export the useful functions. Then you have to
-<code>using</code> the module, and now those functions are available in
-multiple threads.</p>
-<p>The documentation for Julia clearly showed that it was necessary to
-use a SharedArray, which didn’t work for higher order datatypes. I had
-to use a flat array. If you have multiple values being returned, this
-gets ugly fast. The real frustration was that the <code>@sync</code>
-directive didn’t actually do that. I had to put an explicit loop and
-fetch all the futures that were returned. Then the data was safe to
-use.</p>
-<p>That’s a lot of boilerplate and several surprising little land mines
-along the way. While Julia is clearly a powerful language for solving
-mathematical models, the parallelism is a bit difficult compared with
-other higher level languages. I’m sure there’s good reasons for having
-all these constructs, since one is directing a compiler towards making
-thread safe code. However, it just doesn’t feel natural. Julia is
-exposing a lot of parallelism concepts and this puts a lot of power in
-the programmers hands–<em>who knows what he’s doing!</em> It’d really be
-great if there was a simple mode that just worked without all the extra
-directives. However, I’m satisfied–I ran a full sensitivity analysis of
-the simple model in 20 minutes on 8 cores. We should be able to achieve
-2 hours for the full model with these numbers.</p>
-<p>By the way, Chris Rackauckas was incredibly helpful in getting me
-going. He authored the <a
-href="https://github.com/JuliaDiffEq/DifferentialEquations.jl"><code>DifferentialEquation</code></a>
-suite for Julia. Numerically my experience is this code is solid,
-blazingly fast, and very easy to use.</p>
-</div>
-<div id="here-it-goes" class="section level1">
-<h1>Here it goes</h1>
-<p><em>03/15/2017</em></p>
-<p>Well I bit the bullet and I’m going static page generation. A lot
-easier than dealing with code updates. Hosting is now trivial from
-github. It’ll take some time to resurrect old posts, but I’ve got the
-database backed up, and I just have to figure out how to decompress
-Zotonic assets.</p>
-</div>
-<div id="revamp-ideas" class="section level1">
-<h1>Revamp Ideas</h1>
-<p><em>10/28/2016</em></p>
-<p>Beginning a revamp of my website, once again. I saw <a
-href="http://nickstrayer.me/">Nick Stryer</a>’s presentation today on
-how to simply put together a static website. I knew most of the parts
-and pieces, but the simplicity attracted me. Especially considering I
-have broken my Erlang site and have to invest some time to fix it. I’m
-going to write a Postgresql export from Zotonic and see how far I can
-get with that.</p>
-<p>I think the really up side to all this, is a lot of my projects can
-just all get central hub-bed through a static site. The github model of
-hosting is quite amazing for simple static sites.</p>
-<p>Nick used a photo of him yawning as an example. I’ve posting that
-here as a tribute, and because once you’ve posted something like that to
-the internet it’ll probably end up a poster in your retirement home.</p>
 <div class="figure">
-<p><img src="photos/nickyawn.jpg" alt="Nick Yawning" width="300" /></p>
+<p><img src="photos/garbetsp.jpg" alt="Shawn Goofing Around" width="300" /></p>
 </div>
+<p><em>“The crux of the biscuit is the apostrophe.”</em> –Frank
+Zappa</p>
+<div id="about-me" class="section level2">
+<h2>About Me</h2>
+<p>I graduated from Penn State in August 2014 with an M.S. in
+statistics. I did my undergraduate at Tulane University in New Orleans
+in electrical engineering and computer science. I worked for several
+years at TVA and applied combinatorial optimization to coal burning and
+linear programming to running the reservoir system. Worked as a
+consultant for many years, and got hired at Vanderbilt’s Cancer Biology
+to maintain math models of cancer progression and help run a microscope.
+Working with the microscope data, it led me to statistics as the best
+means to interpret the data for the lab. I discovered a new passion in
+statistics, and went back and got my masters, which has led me to the
+present here in <a
+href="https://www.vumc.org/biostatistics/vanderbilt-department-biostatistics">Biostatistics</a>
+at <a href="https://www.vumc.org/main/home">Vanderbilt University
+Medical Center</a>.</p>
+<p>I love playing piano, board games, modeling, reading scifi,
+programming. I’m an NTP according Myers-Briggs, neither an introvert nor
+an extrovert. One theme through all these years is modeling–whether it
+be simulating nuclear magnetic resonance or putting together, playing an
+abstract simulation game or building a scale car and painting it.</p>
+<p>For those wanting all the details, take a look at <a
+href="photos/spgarbet-cv.pdf">curriculum vitae(CV)</a>.</p>
+</div>
+<div id="open-source" class="section level2">
+<h2>Open Source</h2>
+<ul>
+<li><a href="https://github.com/vubiostat/redcapAPI">redcapAPI</a> An R
+interface to VUMC main data collection platform.</li>
+<li><a href="https://github.com/spgarbet/emg/">emg</a> A random mixture
+distribution function package for R.</li>
+<li><a href="https://github.com/vubiostat/acepack">acepack</a> Variance
+stabilization routines in R.</li>
+<li><a href="https://github.com/vubiostat/r-yaml">yaml</a> Yaml 1.1
+interface for R. A strong <a
+href="https://xkcd.com/2347/">dependency</a> for the modern R community
+of packages.</li>
+</ul>
+</div>
+<div id="publications" class="section level2">
+<h2>Publications</h2>
+<p>Shawn Garbett. “Cross Platform CD Indexing,” in Linux Journal.
+December 2003.</p>
+<p>Shawn Garbett. “Cleanroom Software Engineering,” in Dr. Dobbs. August
+2003.</p>
+<p>Quaranta V, Tyson DR, Garbett SP, Weidow B, Harris MP, Georgescu W.
+“Trait variability of cancer cells quantiﬁed by high-content automated
+microscopy of single cells,” in Methods in Enzymology. 2009;467:23-57.
+doi: 10.1016/S0076-6879(09)67002-6. Quaranta V, Garbett SP. “Not all
+noise is waste,” in Nature Methods. 2010 Apr;7(4):269-72. doi:
+10.1038/nmeth0410-269.</p>
+<p>Hassanein M, Weidow B, Koehler E, Bakane N, Garbett S, Shyr Y,
+Quaranta V. “Development of high-throughput quantitative assays for
+glucose uptake in cancer cell lines,” in Molecular Imaging and Biology
+2011 Oct;13(5):840-52. doi: 10.1007/s11307-010-0399-5. Gabriel P,
+Garbett SP, Quaranta V, Tyson DR, Webb GF. “The contribution of age
+structure to cell population responses to targeted therapeutics,” in
+Journal Theoretical Biology. 2012 Oct 21;311:19-27. doi:
+10.1016/j.jtbi.2012.07.001.</p>
+<p>Tyson DR, Garbett SP, Frick PL, Quaranta V. “Fractional
+proliferation: a method to deconvolve cell population dynamics from
+single-cell data,” in Nature Methods. 2012 Sep;9(9):923-8. doi:
+10.1038/nmeth.2138.</p>
+<p>Schildcrout JS, Garbett SP, Heagerty PJ. “Outcome Vector Dependent
+Sampling with Longitudinal Continuous Response Data: Stratiﬁed Sampling
+Based on Summary Statistics,” in Biometrics. 2013 Feb 14. doi:
+10.1111/biom.12013. Markov DA, Little EM, Garbett SP, McCawley LJ.
+“Variation in diﬀusion of gases through PDMS due to plasma surface
+treatment and storage conditions,” in Biomed Microdevices. 2014
+Feb;16(1):91-6. doi: 10.1007/s10544-013-9808-2.</p>
+<p>Schildcrout JS, Rathouz PJ, Zelnick LR, Garbett SP, Heagerty PJ.
+“Biased Sampling Designs to Improve Research Eﬃciency: Factors
+Inﬂuencing Pulmonary Function over Time in Children With Asthma,” in Ann
+Appl Stat. 2015 Jun;9(2):731-753. PMID: 26322147</p>
+<p>Harris LA, Frick PL, Garbett SP, Hardeman KN, Paudel BB, Lopez CF,
+Quaranta V, Tyson DR. “An unbiased metric of antiproliferative drug
+eﬀect in vitro,” in Nat Methods. 2016 Jun; 13(6):497-500. doi:
+10.1038/nmeth.3852</p>
+<p>Schildcrout JS, Haneuse S, Tao R, Zelnick LR, Schisterman EF, Garbett
+SP, Mercaldo ND, Rathouz PJ, Heagerty PJ. “Two-phase, generalized
+case-control designs for quantitative longitudinal outcomes.” in Am J
+Epidemiol. 2019 Jun 5. pii: kwz127. doi: 10.1093/aje/kwz127. Graves JA,
+Zilu Z, Garbett SP, Peterson J. “The Value of Pharmacogenomic
+Information” in</p>
+<p>Economic Dimensions of Personalized and Precision Medicine. National
+Bureau of Economic Research. University of Chicago Press. 2019. Chapter
+3.</p>
+<p>Shi Y, Graves JA, Garbett SP, Zhou Z, Marathi R, Wang X, Harrell FE,
+Lasko TA, Denny JC, Roden DM, Peterson JF, Schildcrout JS. “A
+Decision-Theoretic Approach to Panel-Based, Preemptive Genotyping” in
+MDM Policy Pract. 2019 Aug 17;4(2). doi: 10.1177/2381468319864337.</p>
+<p>Nita Limdi, L Cavallari, Craig Lee, William Hillegass, Ann Holmes,
+Todd Skaar, Maria Pisu, Chrisly Dillon, Amber Beitelshees, Philip Empey,
+Julio Duarte, Vakaramoko Diaby, Yan Gong, Julie Johnson, John Graves,
+Shawn Garbett, Zilu Zhou, and Josh Peterson. “Cost-eﬀectiveness of
+CYP2C19-guided antiplatelet therapy in patients with acute coronary
+syndrome and percutaneous coronary intervention informed by real-world
+data” in Pharmacogenomics. 2020 Feb 11. doi:
+10.1038/s41397-020-0162-5.</p>
+<p>Gregory F. Guzauskas, Shawn Garbett, Zilu Zhou, Scott J. Spencer,
+Hadley S. Smith, Jing Hao, Dina Hassen, Susan R. Snyder, John A. Graves,
+Josh F. Peterson, Marc S. Williams, David L. Veenstra.
+“Cost-eﬀectiveness of Population-Wide Genomic Screening for Hereditary
+Breast and Ovarian Cancer in the United States“ in JAMA Netw Open.
+2020;3(10):e2022874. doi: 10.1001/jamanetworkopen.2020.22874</p>
+<p>Graves, John, Shawn Garbett, Zilu Zhou, Jonathan Schildcrout, Josh
+Peterson. “Comparison of Decision Modeling Approaches for Health
+Technology and Policy Evaluation.” in Medical Decision Making. 2021,
+March 18. doi: 10.1177/0272989X21995805</p>
+<p>Schildcrout, Jonathan S., Frank E. Harrell, Jr., Patrick J. Heagerty,
+Sebastien Haneuse, Chiara Di Gravio, Shawn Garbett, Paul J. Rathouz,
+Bryan E. Shepherd. “Model-assisted analyses of longitudinal, ordinal
+outcomes with absorbing states” in Statistics in Medicine. 2022. doi:
+10.1002/sim.9366</p>
+<p>Guzauskas GF, Jiang S, Garbett S, Zhou Z, Spencer SJ, Snyder SR,
+Graves JA, Williams MS, Hao J, Peterson JF, Veenstra DL.
+“Cost-eﬀectiveness of population-wide genomic screening for Lynch
+syndrome in the United States”. Genet Med. 2022 May;24(5):1017-1026.
+doi: 10.1016/j.gim.2022.01.017. Epub 2022 Feb 25. PMID: 35227606; PMCID:
+PMC9673900.</p>
+<p>Cheryl N. Miller, Keri N. Althoﬀ, David J. Schlueter, Hoda
+Anton-Culver, Qingxia Chen, Shawn Garbett, Francis Ratsimbazafy, Isaac
+Thomsen, Elizabeth W. Karlson, Mine Cicek, Ligia A. Pinto, Bradley A.
+Malin, Lucila Ohno-Machado, Carolyn Williams, David Goldstein, Aymone
+Kouame, Andrea Ramirez, Kelly A. Gebo, Sheri D. Schully. “Concordance of
+SARS-CoV-2 Antibody Results during a Period of Low Prevalence” in
+American Society for Microbiology. 2022 Oct 26;7(5). doi:
+10.1128/msphere.00257-22</p>
+<p>Hund HC, Frantz SK, Wu H, Adeniran OR, Wong TY, Borgmann AJ, Matsuoka
+L, Geevarghese S, Alexopoulos S, Shingina A, Meranze SG, Baker JC,
+Garbett S, Brown DB. “Six-Year Evaluation of Same-Day Discharge
+Following Conventional Chemoembolization of Hepatocellular Carcinoma” J
+Vasc Interv Radiol. 2023 Mar;34(3):378-385. doi:
+10.1016/j.jvir.2022.11.029.</p>
+<p>Gregory F Guzauskas, Shawn Garbett, Zilu Zhou, Jonathan S
+Schildcrout, John A Graves, Marc S Williams, Jing Hao, Laney K Jones,
+Scott J Spencer, Shangqing Jiang, David L Veenstra, Josh F Peterson.
+“Population Genomic Screening for Three Common Hereditary Conditions : A
+Cost-Eﬀectiveness Analysis” Ann Intern Med. 2023 May;176(5):585-595.
+doi: 10.7326/M22-0846.</p>
+<p>Ortega OO, Ozen M, Wilson BA, Pino JC, Irvin MW, Ildefonso GV,
+Garbett SP, Lopez CF. “Signal execution modes emerge in biochemical
+reaction networks calibrated to experimental data”. iScience. 2024 May
+16;27(6):109989. doi: 10.1016/j.isci.2024.109989. PMID: 38846004; PMCID:
+PMC11154230.</p>
+<p>Guide A, Sulieman L, Garbett S, Cronin RM, Spotnitz M, Natarajan K,
+Carroll RJ, Harris P, Chen Q. “Identifying erroneous height and weight
+values from adult electronic health records in the All of Us research
+program”. J Biomed Inform. 2024 Jul;155:104660. doi:
+10.1016/j.jbi.2024.104660. Epub 2024 May 23. PMID: 38788889.</p>
+<p>Guide A, Garbett S, Feng X, Mapes BM, Cook J, Sulieman L, Cronin RM,
+Chen Q. “Balancing eﬃcacy and computational burden: weighted mean,
+multiple imputation, and inverse probability weighting methods for item
+non-response in reliable scales.”. J Am Med Inform Assoc. 2024 Aug 13.
+doi: 10.1093/jamia/ocae217. PMID: 39138951.</p>
 </div>
 
 

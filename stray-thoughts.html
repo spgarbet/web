@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Oh, No. He’s getting organized</title>
+
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">garbett.org</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Complete Unknown</a>
+</li>
+<li>
+  <a href="stray-thoughts.html">No Direction Home</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Oh, No. He’s getting organized</h1>
+
+</div>
+
+
+<p>This is a rarely updated bin of stray thoughts.</p>
+<div id="a-group-project" class="section level1">
+<h1>A Group Project</h1>
+<p><em>08/08/2017</em></p>
+<p>In those far distant days when we wrestled with dinosaurs it was the
+senior year of my undergraduate experience. Our AI instructor assigned a
+group project and four of us met in that well air-conditioned computer
+lab around that warm glow of VT100s. There was an awkward bit of silence
+till Adam [names have been changed to protect the guilty] spoke up and
+said, “Well I don’t understand how we all work together on a
+program.”</p>
+<p>I spoke up and with surety said “Simple, we just divide the work into
+subroutines and each person does a subroutine and all we have to agree
+on is interfaces.”</p>
+<p>At that moment I became team leader and stepped right over onto a
+slippery slope paved with equal parts of my own ignorance and arrogance.
+I grabbed a sheet of paper and quickly scribbled out 3 interfaces.</p>
+<blockquote>
+<p>f(x) :: Filename -&gt; Config</p>
+<p>g(x) :: Config -&gt; (Scenario -&gt; Score) -&gt; Scenario</p>
+<p>h(x) :: Scenario -&gt; Score</p>
+</blockquote>
+<p>With a definition of what each of those pieces were, and I said “None
+of those routines are too difficult to write, and if one needs to change
+the interface just communicate with your partner who is effected. I’ll
+write the main loop and do the write-up and we can make quick work of
+this. What do you say we meet next week, same time and place?”</p>
+<p>There were nodes of agreement, and after fishing for some nickles [we
+called them bees] we made copies at the machine and everyone had a copy
+of the defined interface. Adam took f(x), Billy took g(x), and Carmen
+took h(x). I knew that all I had to do was write a trival function to
+tie it together and fill in the blacks on a piece of paper, delegation
+and leadership has its perks afterall.</p>
+<p>I wrote my routine and headed off to Tulane’s infamous Boot to
+congratulate myself on such a brilliant piece of work.</p>
+<blockquote>
+<p>print g(f(ARGV[1]), h)</p>
+</blockquote>
+<p>The next week came and we met again to stitch it all together. Adam
+said, “I wanted to really understand what made g(x) needed so I wrote
+that but couldn’t figure out the proper regexs to make the file reading
+work so I don’t have f(x).”</p>
+<p>Billy spoke and said, “I didn’t like the config definition as it
+didn’t work for me so I wrote something entirely different and the core
+algorithm didn’t interest me so I did something else the professor
+didn’t ask for. So I have J(x).</p>
+<p>Carmen spoke and said, “I don’t have time for this, I was hoping one
+of you would have done my work already out of curiosity.”</p>
+<p>There were odd stares around the table. The realization as to why we
+were assigned a group project began to sink in with me. Success in
+development teams is greatly impacted by other factors than technical
+prowess. It’s really about about communication and following interface
+specifications, something none of us had learned to date. It’s also
+about cutting losses. We still had another week, so I said “Everyone
+email me your code and I think I can make it work. Let’s meet in a
+week.” Being the leader also means you get to do what doesn’t get
+done.</p>
+<p>I met up with Adam later. I worked with him on the regexs. The
+scoring function was trivial. We got his version working fairly quickly.
+The next meeting we all signed off and turned it in. Got an A, many
+teams never made it over the finish line. This small exercise I’ve seen
+repeated over and over on larger and larger scales of money and
+resources. Small group projects with definable interfaces are an
+incredible learning tool.</p>
+</div>
+<div id="user2017-notes" class="section level1">
+<h1>UseR!2017 Notes</h1>
+<p><em>07/10/2017</em> Vanderbilt sponsored a trip for me to Brussels to
+attend UseR!2017. This is a loose collection of my notes from the
+conference.</p>
+<p>I met a Wolfgang from Austria who does clincial statistics on general
+medicine. Showed him my slides of tangram and he was very interested and
+said he would be watching the project as he thought it could be very
+useful to him. Later had dinner with him. He was mortified when I
+described Volka’s Fire in the Lake boardgame. “Why would anyone ever
+want to play such a monstrocity?” I really hope to get in touch with him
+and get tangram to help his research.</p>
+<p>Attended Martyn Plummer’s JAGS tutorial. It was very well done.
+Martyn is a natural educator and very welcoming and engaging. The slides
+and exercises are provided at tinyurl.com/yca2soe5. He was asked about
+comparing it with Stan. He did, but ended with this quote: “All the cool
+kids are using Julia, so why not do that instead?” JAGS looks like a
+really nice set of tools for Bayesian modeling.</p>
+<p>Met an Edvin from Leiden on the bus and we discussed financial risk
+models. He had a very interesting project. I shared with him my
+<code>spectral</code> ideas for treatment of a Cauchy as a sum of
+normals to estimate within a percentage of desired risk.</p>
+<p>Met an Ian Lyttle from Scheinder electric. They are using R to model
+a good number of things about their product line, and are interfacing
+internally with their company via Shiny. Shiny comes up many many times
+for the rest of the conference. Overall an interesting presentation. He
+said he sometimes comes to the Smyrna plant near Nashville. He ended up
+out socializing with Lucy and Nic, so I think we’ll be hearing more from
+him.</p>
+<p>Overall, the corporate presence was more than last year. Microsoft
+and Oracle have both discovered the power of R and are doing everything
+they can to pull companies into their R offerings. They were given for
+the most part the main hall lectures which unsurprisingly were mostly
+empty while the Shiny track was standing room only out the door. Shiny
+was the hot technology in R at this conference. I thought about why this
+was, and having experience about 20 web frameworks I think the
+programmatic interface for Shiny is incredibly easy and easy to extend.
+It’s performance as a web server is terrible in comparison to most
+frameworks, but for low volume applications it works quite well. There
+was an opening Shiny talk which was supposed to be about scaling which
+covered none of that, and the questions got tense demanding details
+about scaling.</p>
+<p>There was no employment opportunity posting board. If anyone
+mentioned they were in the market for a job they got about 3 offers
+before they turned around. Demand for R programmers is very high. I got
+an unsolicited offer.</p>
+<p>On a personal note, I was able to make the trip without a migraine
+and for someone with a severe migraine disorder triggered by sleep
+disturbances this was no small feat. I adjusted my sleep cycle over days
+going and over the days returning and the strategy worked. I did get ill
+on the first of the conference during the JAGS tutorial and feared about
+missing more but after a fever/etc it passed and I was back in the
+saddle for Day 2. Martyn’s talk on JAGS was really nice even though I
+was in poor spirits. I spoke with Martyn afterward and he was
+disappointed that Frank was not at the meeting.</p>
+<p>Every person I showed my slides on my phone about tangram split into
+two categories, unimpressed and their work was non-clinical or ‘I need
+that NOW!’ and they do clinical work. I spoke with Tom and we need to
+find a conference to present at that overlaps clinical and statistical.
+I also thought hard about what I could have done to get a talk (there
+were some unimpressive talks) and I think the abstract needs a complete
+overhaul and some more marketing over time to build up a user base. The
+two things that people wanted most were LaTeX and Word interfaces, so
+the current work cycle towards a full stack implementation should
+continue.</p>
+<p>Future ideas for tangram that I had at the meeting. The first is that
+the parser should support R formula syntax 100% and be useful outside
+the library as a formula parser. I spoke some with Uwe and he knew of no
+Backus-Naur (BNF) documentation of the formula parser. He said read the
+FORTRAN source. I think I’m going to have to, and create the BNF
+document myself and Uwe said the core team would love it documented. The
+internal parser makes assumptions about the semantics of the formula and
+isn’t easily used as an abstract syntax tree the way it’s coded.</p>
+<p>Secondly, talking with the RStudio folks they were saddened to hear
+that Jeff had left us and wanted to contact him about job opportunities.
+They said that pandoc supported Word natively. I thought I tried this
+and it didn’t work well, but I’m going to give it another try. What is
+really needed in this context is a traceability key that can be added as
+a comment. They said they thought the pandoc team would be open to
+adding such a small extension, and then I could modify the tangram
+framework to work directly with pandoc–this would be ideal! The
+possibilities such a tiny modification to pandoc open up are enormous
+for traceability.</p>
+<p>I’m working towards finishing out LaTeX support. I have a UNICODE to
+LaTeX map for use in R defined by merging three sources here: <a
+href="https://github.com/spgarbet/tangram/blob/master/R/render-latex-map.R"
+class="uri">https://github.com/spgarbet/tangram/blob/master/R/render-latex-map.R</a>.
+This I think would be useful in a variety of contexts. In general I’m
+going to create support for a subset of Rmd to LaTeX for use in the
+library. The biggest issue I’ve had in that department is that Rmd does
+not support superscript / subscript so I’m toying with including the
+LaTeX definitions in their raw form.</p>
+<p>There was an interesting presentation of <a
+href="https://cran.r-project.org/package=rags2ridges">rags2ridges</a>
+which was said to find network relationships in a more robust manner
+than lasso. A paper is published on the performance of the algorithm. In
+general a very exciting piece of work, and I need to know more about
+this as network discovery is something of interest to me.</p>
+<p>There was a really nice visual presentation of clusters by Agnieszka
+Sitko using <a
+href="https://cran.r-project.org/package=factorMerger">factorMerger</a>.
+One of the methods used likelihood ratios to determine branching. See
+the <a href="arxiv.org/abs/1505.04008">paper</a>.</p>
+<p>Thomas Petzhold had the definitive growth rate package in R. It would
+take a growth rate model from differential equations, or any of several
+formulic ones such as Gompertz or logistic and allow for a regression
+over data sets. Really a wonderful growth rate package. The ‘fracprolif’
+package should just be folded into his.</p>
+<p>Saw a presentation on Multiple Correspondence Analys which was billed
+as ‘PCA on categorical information’ which could prove useful at
+somepoint.</p>
+<p>I got to have a meeting with Bart Smeets and Iñaki Úcar and they are
+doing some wonderful work on ‘simmer’. They showed me the new package
+‘simmer.optim’ which optimizes parameters from a simmer model. I need to
+explore this further.</p>
+<p>simmer.optim can run any javascript inside R.</p>
+<p>There were also some psychometrics presentations that had tools in
+Shiny for evaluating test performances over a student body. This may be
+of interest to our graduate program.</p>
+<p>As an aside I saw this on twitter (<a
+href="https://twitter.com/R_Programming/status/885084780777353216"
+class="uri">https://twitter.com/R_Programming/status/885084780777353216</a>),
+which I think tangram can do already and if not with very little
+modification can do it in all the rendering formats. They had a much
+larger team that was thrown at the problem. Note how well they marketed
+what they’ve done. I need to wrap up and write a short paper for the R
+Journal.</p>
+</div>
+<div id="julia-and-parallel" class="section level1">
+<h1>Julia and Parallel</h1>
+<p><em>03/15/2017</em></p>
+<p>I’m working on an economic model of finding out the best strategy for
+patient testing with genomic panels and how it effects treatment. We
+used discrete event simulation, <a
+href="http://r-simmer.org/">simmer</a> in R, and it’s working well. The
+problem has become performance. Since most of the events we’re
+interested in are rare events, the simulation size is up around
+simulating 4,000,000 patients to tease out enough resolution to make
+economic forecasts of impact as measured in expected cost and quality of
+life. We need to look at sensitivity of the model in the parameter space
+and find where the biggest benefits are, and what makes the model
+efficient or not. To do this requires around 200,000 model runs. This
+ends up meaning we need about a trillion simulations. Current speed is
+around 500 simulations/second. Which leaves me needing around 65 years
+of computing time. Fire up that ACCRE cluster!</p>
+<p>Or alternatively I could do something a bit more intelligent and
+optimize model execution. I’ve figured out that solutions of these
+models are all solvable via solving differential equations in queuing
+theory. I’ve even gone further and found that the general equation is re
+presentable as a age structured partial delay differential equation.
+Turns out these are difficult to solve, but fortunately for the project
+there is a subset of these problems that are solvable, and it just
+happens it’s this set of problems. We came up with a simple test model,
+and have implemented that in DES, and I rewrote it as a numerical delay
+differential and used <a
+href="https://cran.r-project.org/web/packages/deSolve/deSolve.pdf">deSolve</a>
+to crack it. Takes 11 seconds to numerically solve the model. That’s the
+full solution with 1e-12 digits of resolution; the equivalent of
+infinite numbers of simulations. This puts it into the realm of taking
+25 days of computing time to solve the sensitivity problem. Better, but
+not good enough.</p>
+<p>That was when I discovered <a href="http://julialang.org/">Julia</a>
+in looking around for a compiled solution. I recoded the model, the
+resulting model code is arguably simpler than the R code. It runs a
+model 0.02 seconds once the Julia code is compiled (which it does on
+start up of execution–so there’s a delay in getting going). Now we’re
+talking an hour to run the sensitivity analysis. I’ve already done this
+and passed it into <a
+href="https://github.com/LoLab-VU/varsens">Saltelli’s Variance Based
+Method</a> and validated results. Was able over the last few days to do
+around 5 runs and debug a few things in the flow. Julia is certainly a
+powerful mathematical language.</p>
+<p>The full model is not going to be as easy as the simple one. Probably
+closer to 0.2 seconds a run to solve. This is feasible, but I want more.
+I have 8 cores on my box and should be able to run a model in parallel
+using all that power to make it happen in short order. I thought it’d be
+a simple command like <code>mclapply</code> from <a
+href="https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf">parallel</a>
+as shown in this R session:</p>
+<pre><code>&gt; library(parallel)
+&gt; solve_model &lt;- function(x) 2*x
+&gt; x &lt;- unlist(mclapply(1:100, mc.cores=8, function(i) {solve_model(i)}))
+&gt; sum(x)
+[1] 10100</code></pre>
+<p>This is where is got weird. Julia doesn’t follow the principle of
+least surprise when it comes to parallel processing. I have this short
+Julia example equivalent of the R example of what was actually required
+to get it to work:</p>
+<pre><code>@everywhere module StuffToUseParallel
+
+  function solve_model(x)
+    2*x
+  end
+  
+  export solve_model
+  
+end # StuffToUseParallel
+
+using StuffToUseParallel
+
+x = SharedArray{Int}(100)
+# documentation says use @sync @parallel if you actually 
+# want it computed at the end of the loop
+# But that didn&#39;t work.
+futures = @parallel for i in 1:100
+  x[i] = solve_model(i)
+end
+
+# @sync didn&#39;t work, but this does
+for f in futures
+  fetch(f)
+end
+
+# Now it&#39;s safely available to use
+println(sum(x))</code></pre>
+<p>First I had a lot of functions, and they didn’t exist in parallel
+threads unless I put <code>@everything</code> in front of every
+function. To get it to be available in multiple threads easily, I
+enclosed it in a <code>Module</code> and then used the
+<code>@everything</code> to make it available. Of course, since it’s a
+Module it has to export the useful functions. Then you have to
+<code>using</code> the module, and now those functions are available in
+multiple threads.</p>
+<p>The documentation for Julia clearly showed that it was necessary to
+use a SharedArray, which didn’t work for higher order datatypes. I had
+to use a flat array. If you have multiple values being returned, this
+gets ugly fast. The real frustration was that the <code>@sync</code>
+directive didn’t actually do that. I had to put an explicit loop and
+fetch all the futures that were returned. Then the data was safe to
+use.</p>
+<p>That’s a lot of boilerplate and several surprising little land mines
+along the way. While Julia is clearly a powerful language for solving
+mathematical models, the parallelism is a bit difficult compared with
+other higher level languages. I’m sure there’s good reasons for having
+all these constructs, since one is directing a compiler towards making
+thread safe code. However, it just doesn’t feel natural. Julia is
+exposing a lot of parallelism concepts and this puts a lot of power in
+the programmers hands–<em>who knows what he’s doing!</em> It’d really be
+great if there was a simple mode that just worked without all the extra
+directives. However, I’m satisfied–I ran a full sensitivity analysis of
+the simple model in 20 minutes on 8 cores. We should be able to achieve
+2 hours for the full model with these numbers.</p>
+<p>By the way, Chris Rackauckas was incredibly helpful in getting me
+going. He authored the <a
+href="https://github.com/JuliaDiffEq/DifferentialEquations.jl"><code>DifferentialEquation</code></a>
+suite for Julia. Numerically my experience is this code is solid,
+blazingly fast, and very easy to use.</p>
+</div>
+<div id="here-it-goes" class="section level1">
+<h1>Here it goes</h1>
+<p><em>03/15/2017</em></p>
+<p>Well I bit the bullet and I’m going static page generation. A lot
+easier than dealing with code updates. Hosting is now trivial from
+github. It’ll take some time to resurrect old posts, but I’ve got the
+database backed up, and I just have to figure out how to decompress
+Zotonic assets.</p>
+</div>
+<div id="revamp-ideas" class="section level1">
+<h1>Revamp Ideas</h1>
+<p><em>10/28/2016</em></p>
+<p>Beginning a revamp of my website, once again. I saw <a
+href="http://nickstrayer.me/">Nick Stryer</a>’s presentation today on
+how to simply put together a static website. I knew most of the parts
+and pieces, but the simplicity attracted me. Especially considering I
+have broken my Erlang site and have to invest some time to fix it. I’m
+going to write a Postgresql export from Zotonic and see how far I can
+get with that.</p>
+<p>I think the really up side to all this, is a lot of my projects can
+just all get central hub-bed through a static site. The github model of
+hosting is quite amazing for simple static sites.</p>
+<p>Nick used a photo of him yawning as an example. I’ve posting that
+here as a tribute, and because once you’ve posted something like that to
+the internet it’ll probably end up a poster in your retirement home.</p>
+<div class="figure">
+<p><img src="photos/nickyawn.jpg" alt="Nick Yawning" width="300" /></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

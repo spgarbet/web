@@ -4,9 +4,9 @@ navbar:
   title: "garbett.org"
   left:
     - text: "Complete Unknown"
-      href: about.html
-    - text: "No Direction Home"
       href: index.html
+    - text: "No Direction Home"
+      href: stray-thoughts.html
 output:
   html_document:
     theme: sandstone
