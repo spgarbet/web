@@ -18,7 +18,7 @@ Got hired full time at Vanderbilt's Cancer Biology to maintain math models of ca
 
 I love playing piano, board games, modeling, reading scifi, programming. I'm an NTP according Myers-Briggs, neither an introvert nor an extrovert. One theme through all these years is modeling--whether it be simulating nuclear magnetic resonance or putting together, playing an abstract simulation game or building a scale car and painting it.
 
-For those wanting all the details, take a look at [curriculum vitae(CV)](photos/spgarbet-cv.pdf).
+For those wanting all the details, take a look at [curriculum vitae(CV)](photos/spgarbet-cv.pdf). Contact me by decoding this puzzle: shawn \<dot\> garbett \<at\> vumc.org. 
 
 ## Open Source
 
