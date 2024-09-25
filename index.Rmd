@@ -21,7 +21,7 @@ options(htmltools.dir.version = FALSE)
 _"The crux of the biscuit is the apostrophe."_ --Frank Zappa
 
 
-For those wanting all the details, take a look at my [curriculum vitae(CV)](photos/spgarbet-cv.pdf). To contact me decode this puzzle: 'shawn \<dot\> garbett \<at\> vumc.org' or 'shawn \<at\> garbett.org' for personal correspondence.
+For those wanting all the details, take a look at my [resume](photos/spgarbet-resume.pdf) or my [curriculum vitae(CV)](photos/spgarbet-cv.pdf). To contact me decode this puzzle: 'shawn \<dot\> garbett \<at\> vumc.org' or 'shawn \<at\> garbett.org' for personal correspondence.
 
 
 ## The Long and Short of It
