@@ -22,7 +22,17 @@ _"I always wanted to be the least talented member of the band. That way I had to
 
 # Eris
 
-Eris is a VCO with chaotic modulated output. It also features pulse width modulation of all output voices for enhanced timbre choices. The saw wave is modified using a beta function map to approximate the area under the curve to a square PWM wave. 
+<span class="marginnote shownote">
+<img src="assets/eris.png" alt="Eris Panel" width="100" />
+</span>
+
+Eris (the Greek god of chaos) is a VCO with chaotic modulated output. It also features pulse width modulation of all output voices for enhanced timbre choices. The saw wave is modified using a beta function map to approximate the area under the curve to a square PWM wave.
+
+The core idea is that one needs to maintain a periodicity for an oscillator to still be an oscillator. If a logistic map is changing between two values and an output is flipped using this map a square wave results. However, the logistic map goes from 2 values, to 4 values, to 8 values to chaotic unpredictable values. Thus one can parameterize how much chaos via the logistic parameter one wants. This requires some scaling of outputs and this was solved with a lot of simulations and a 4th order curve to normalize the logistic output. There are regions inside the parameter space that are almost stable. 
+
+To truly understand this effect, just hook Eris up to the output and experiment with different levels of chaos via the trim knob. At some higher levels of chaos, listen to the overtone harmonics. Try to find a pattern. About the time it sounds like one has been found it disappears and reappears later like an auditory will-o-the-wisp.
+
+On the surface it sounds like standard bit crushing 8-bit noise being injected. At some values it sounds like a modem screaming out bits of information--there is information in the chaos. The central implementation to all the wave forms is by a chaotic VCA. Releasing a VCA that does given a clock is under consideration as this would allow for the effect to be applied to _any_ VCO.
 
 # Norns
 
@@ -169,7 +179,7 @@ One can utilize multiple scale quantizers from the drop down menu. Try them out 
 
 Turning off the "Correct Imbalance" allows one to have imbalance patterns where "1" is not on a head pattern. Maybe one just wants such imbalance, but there are further possibilities. One could for example set the lenght of $A$ and $C$ to be 4 and section $B$ to be 8. Then use the Norn $B$ gate to select a clock cycle that is double the main cycle. This means that the rhythm of the $B$ section would be double (e.g. eights to quarters) that of $A$ and $C$. With imbalance correction turned off, this would come back to one since the patterns are all the same length in time. 
 
-Here's a [kitchen sink](assets/norns-kitchen-sink.vcv) demo module. ^[Kitchen Sink Raw Demo<br/><audio controls><source src="assets/demo2.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio>]
+Here's a [kitchen sink](assets/norns-kitchen-sink.vcv) demo module. ^[Kitchen Sink Raw Demo<br/><audio controls><source src="assets/demo2.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio>] Remember this is entirely driven by a random sequencer. The kitchen sink tries to have a voice for every output and utilizes most of the modulation sources. 
 
 # Copyright Notice
 
