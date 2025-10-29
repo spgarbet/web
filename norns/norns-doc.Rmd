@@ -14,10 +14,6 @@ knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
 ```
 
-<span class="marginnote shownote">
-<img src="assets/norns-panel.png" alt="Norn Module Panel" width="300" />
-</span>
-
 _"I always wanted to be the least talented member of the band. That way I had to keep up.”_ --Dave Brubeck
 
 # Eris
@@ -26,7 +22,7 @@ _"I always wanted to be the least talented member of the band. That way I had to
 <img src="assets/eris.png" alt="Eris Panel" width="100" />
 </span>
 
-Eris (the Greek god of chaos) is a VCO with chaotic modulated output. It also features pulse width modulation of all output voices for enhanced timbre choices. The saw wave is modified using a beta function map to approximate the area under the curve to a square PWM wave.
+Eris (the Greek god of chaos) is a [VCV Rack](https://vcvrack.com/) VCO with chaotic modulated output. It also features pulse width modulation of all output voices for enhanced timbre choices. The saw wave is modified using a beta function map to approximate the area under the curve to a square PWM wave.
 
 The core idea is that one needs to maintain a periodicity for an oscillator to still be an oscillator. If a logistic map is changing between two values and an output is flipped using this map a square wave results. However, the logistic map goes from 2 values, to 4 values, to 8 values to chaotic unpredictable values. Thus one can parameterize how much chaos via the logistic parameter one wants. This requires some scaling of outputs and this was solved with a lot of simulations and a 4th order curve to normalize the logistic output. There are regions inside the parameter space that are almost stable. 
 
@@ -35,6 +31,12 @@ To truly understand this effect, just hook Eris up to the output and experiment 
 On the surface it sounds like standard bit crushing 8-bit noise being injected. At some values it sounds like a modem screaming out bits of information--there is information in the chaos. The central implementation to all the wave forms is by a chaotic VCA. Releasing a VCA that does given a clock is under consideration as this would allow for the effect to be applied to _any_ VCO.
 
 # Norns
+
+
+<span class="marginnote shownote">
+<img src="assets/norns-panel.png" alt="Norn Module Panel" width="300" />
+</span>
+
 
 Norns is a [VCV Rack](https://vcvrack.com/) module written by [Shawn Garbett](https://www.garbett.org) that provides random sequences and mutates them via Hindustani rhythm theory. There are 3 random sequences (the three Norns) that get woven into a single tapestry that always comes back to 1 on a long downbeat. There are a variety of expression modulations as well that fit within the theory. ^[Pelog Scale Raw Demo<br/><audio controls><source src="assets/demo.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio> Demo edited into a track <a href="https://soundcloud.com/shawn-garbett/weave-on-the-run">here</a>.]
 
