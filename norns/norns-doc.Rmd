@@ -20,6 +20,12 @@ options(htmltools.dir.version = FALSE)
 
 _"I always wanted to be the least talented member of the band. That way I had to keep up.”_ --Dave Brubeck
 
+# Eris
+
+Eris is a VCO with chaotic modulated output. It also features pulse width modulation of all output voices for enhanced timbre choices. The saw wave is modified using a beta function map to approximate the area under the curve to a square PWM wave. 
+
+# Norns
+
 Norns is a [VCV Rack](https://vcvrack.com/) module written by [Shawn Garbett](https://www.garbett.org) that provides random sequences and mutates them via Hindustani rhythm theory. There are 3 random sequences (the three Norns) that get woven into a single tapestry that always comes back to 1 on a long downbeat. There are a variety of expression modulations as well that fit within the theory. ^[Pelog Scale Raw Demo<br/><audio controls><source src="assets/demo.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio> Demo edited into a track <a href="https://soundcloud.com/shawn-garbett/weave-on-the-run">here</a>.]
 
 NornsEx or Arachne is an expander for Norns that slices across the tapestry woven by the Norns and provides an orthogonal but complementary set of outputs. A weave has 2 directions to form the whole.
@@ -163,5 +169,10 @@ One can utilize multiple scale quantizers from the drop down menu. Try them out 
 
 Turning off the "Correct Imbalance" allows one to have imbalance patterns where "1" is not on a head pattern. Maybe one just wants such imbalance, but there are further possibilities. One could for example set the lenght of $A$ and $C$ to be 4 and section $B$ to be 8. Then use the Norn $B$ gate to select a clock cycle that is double the main cycle. This means that the rhythm of the $B$ section would be double (e.g. eights to quarters) that of $A$ and $C$. With imbalance correction turned off, this would come back to one since the patterns are all the same length in time. 
 
+Here's a [kitchen sink](assets/norns-kitchen-sink.vcv) demo module. ^[Kitchen Sink Raw Demo<br/><audio controls><source src="assets/demo2.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio>]
 
+# Copyright Notice
 
+All music tracks are copyright (c) 2025 by Shawn Garbett. All rights reserved.
+
+Code is copyrighted as marked.
