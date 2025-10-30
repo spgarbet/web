@@ -44,7 +44,9 @@ Norns is a [VCV Rack](https://vcvrack.com/) module written by [Shawn Garbett](ht
 
 NornsEx or Arachne is an expander for Norns that slices across the tapestry woven by the Norns and provides an orthogonal but complementary set of outputs. A weave has 2 directions to form the whole.
 
-Comparable approaches are Euclidean melody generation and [Moog's Labyrinth](https://www.moogmusic.com/synthesizers/labyrinth/). This differs from Euclidean in that the pattern mutations are carefully constructed to come back to 1 _and_ it has expression modulation for position in sequence. Moog's Labyrinth has 2 random sequences going in parallel, whereas this has 3 random sequences getting chopped up in repeating patterns. 
+Comparable approaches are Euclidean melody generation and [Moog's Labyrinth](https://www.moogmusic.com/synthesizers/labyrinth/). This differs from Euclidean in that the pattern mutations are carefully constructed to come back to 1 _and_ it has expression modulation for position in sequence. Moog's Labyrinth has 2 random sequences going in parallel, whereas this has 3 random sequences getting chopped up in repeating patterns.
+
+A simple example [patch](assets/norns-simple.vcv) is good to play around with to explore what it offers.
 
 ## Rhythm Theory
 
