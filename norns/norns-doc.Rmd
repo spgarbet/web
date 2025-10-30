@@ -40,7 +40,7 @@ On the surface it sounds like standard bit crushing 8-bit noise being injected. 
 </span>
 
 
-Norns is a [VCV Rack](https://vcvrack.com/) module written by [Shawn Garbett](https://www.garbett.org) that provides random sequences and mutates them via Hindustani rhythm theory. There are 3 random sequences (the three Norns) that get woven into a single tapestry that always comes back to 1 on a long downbeat. There are a variety of expression modulations as well that fit within the theory. ^[Pelog Scale Raw Demo<br/><audio controls><source src="assets/demo.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio> Demo edited into a track <a href="https://soundcloud.com/shawn-garbett/weave-on-the-run">here</a>.]
+Norns is a [VCV Rack](https://vcvrack.com/) module written by [Shawn Garbett](https://www.garbett.org) that provides random sequences and mutates them via Hindustani rhythm theory. There are 3 random sequences (the three Norns) that get woven into a single tapestry that always comes back to 1 on a long downbeat. There are a variety of expression modulations as well that fit within the theory.^[Pelog Scale Raw Demo<br/><audio controls><source src="assets/demo.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio> Demo edited into a track <a href="https://soundcloud.com/shawn-garbett/weave-on-the-run">here</a>.]
 
 NornsEx or Arachne is an expander for Norns that slices across the tapestry woven by the Norns and provides an orthogonal but complementary set of outputs. A weave has 2 directions to form the whole.
 
@@ -74,7 +74,7 @@ This pattern presents the original pattern 3 times and the final "0" comes in on
 
 The important take away is the variation cycle always comes back to 1, the $C$ section is the auditory hook signally return to 1 and the first note of $A$ becomes the all important "1" of the pattern. 
 
-Hindustani rhythm is far more complicated than this short outline (please don't email me complaints about how this overlooked something because it is way short of the true rich complexity of the full tradition), but these are elements implemented in this module. There is no attempt to fix an exact tal of any form, but rather it relies on random variation to make unique and new tals that _resemble_ the rules of Hindustani theory.
+Hindustani rhythm is far more complicated than this short outline (please don't email me complaints about how this overlooked something because it is way short of the true rich complexity of the full tradition), but there are some elements implemented in this module. There is no attempt to fix an exact tal of any form, but rather it relies on random variation to make unique and new tals that _resemble_ the rules of Hindustani theory.
 
 ## Norns Details
 
@@ -173,9 +173,9 @@ CV, GATE and TRIG are outputs from the new rewoven pattern.
 
 DRY is the NOT of the WET section and is useful for an opposite gate. 
 
-ACC triggers when beat 1 of a Norn thread triggers.
+ACC (accent) triggers when beat 1 of a Norn thread triggers.
 
-EXPR is a modify version of INT that integrates ACC for the last 10% of intensity giving an accent beat structure modulation.
+EXPR is a modified version of INT (intensity) that integrates ACC for the last 10% of intensity giving an accent beat structure modulation.
 
 A', B', and C' are the individual Norn threads rewoven. 
 
@@ -183,9 +183,9 @@ A', B', and C' are the individual Norn threads rewoven.
 
 One can utilize multiple scale quantizers from the drop down menu. Try them out and see what fits with your piece. While the output is all relative to 0V CV (i.e relative to C) various VCO's can be tuned up or down to rescale a piece. With some fine tweaking of the width knobs it can take on various modal harmonic variations as well.
 
-Turning off the "Correct Imbalance" allows one to have imbalance patterns where "1" is not on a head pattern. Maybe one just wants such imbalance, but there are further possibilities. One could for example set the lenght of $A$ and $C$ to be 4 and section $B$ to be 8. Then use the Norn $B$ gate to select a clock cycle that is double the main cycle. This means that the rhythm of the $B$ section would be double (e.g. eights to quarters) that of $A$ and $C$. With imbalance correction turned off, this would come back to one since the patterns are all the same length in time. 
+Turning off the "Correct Imbalance" allows one to have imbalance patterns (when the length of A does not equal the length of B) where "1" is not on a head pattern. Maybe one just wants such imbalance, but there are further possibilities. One could for example set the length of $A$ and $C$ to be 4 and section $B$ to be 8. Then use the Norn $B$ gate to select a clock cycle that is double the main cycle. This means that the rhythm of the $B$ section would be double (e.g. eights to quarters) that of $A$ and $C$. With imbalance correction turned off, this would come back to one since the patterns are all the same length in time. 
 
-Here's a [kitchen sink](assets/norns-kitchen-sink.vcv) demo module. ^[Kitchen Sink Raw Demo<br/><audio controls><source src="assets/demo2.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio>] Remember this is entirely driven by a random sequencer. The kitchen sink tries to have a voice for every output and utilizes most of the modulation sources. 
+Here's a [kitchen sink](assets/norns-kitchen-sink.vcv) demo module.^[Kitchen Sink Raw Demo<br/><audio controls><source src="assets/demo2.mp3" type="audio/mpeg"/>Your browser does not support the audio tag.</audio>] Remember this is entirely driven by a random sequencer. The kitchen sink tries to have a voice for every output and utilizes most of the modulation sources. 
 
 # Copyright Notice
 
