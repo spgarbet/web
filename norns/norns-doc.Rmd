@@ -101,10 +101,10 @@ Below this is the Norns logo, and the 'O' is a button that triggers an external 
 
 Each of the 3 Norn sections weave a single thread, the beginning, the middle and the end. 
 
-The first stop is the probability of a random draw when a step is active in this section. 
+The first stop is the PROB (probability) of a random draw when a step is active in this section. 
 If the probability is negative, the state of a step does not flip on/off. If the probability is positive, then there is a chance that the state of a step will flip between on/off as well.
 
-The bias section controls the bias towards being on when a positive probability triggers a random update for a value. At the center upright position of 0.5, this means that on and off are a coin toss. There is no absolute on or absolute off as the draws are just the bias of a heavily weighted coin. It's been adjusted towards a bias of 1.0 being near 99% chance of being on. 
+The BIAS section controls the bias towards being on when a positive probability triggers a random update for a value. At the center upright position of 0.5, this means that on and off are a coin toss. There is no absolute on or absolute off as the draws are just the bias of a heavily weighted coin. It's been adjusted towards a bias of 1.0 being near 99% chance of being on. 
 
 The next two knob/inputs CNTR (center) and WDTH (width) do _not_ affect any random draws. The internal value is [0,1]. These two parameters affect how that value is scaled into an output CV. Thus if these knobs are changed (or the scale), the internal values are not updated--just the how the output is generated. An example use would be to have the first Norn be a bit below 0.5 for center, the second be 0.5 for center and the last be above 0.5 for center. Thus a progression would tend to go upward as it builds back towards 1. This allows for some harmonic contouring of a pattern.
 
