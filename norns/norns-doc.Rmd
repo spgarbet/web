@@ -108,14 +108,14 @@ The next two knob/inputs CNTR (center) and WDTH (width) do _not_ affect any rand
 
 The middle part of a norn, shows the current state of the pattern via 8 leds and has 4 buttons to manipulate a pattern.
 
-The LEN button changes the length of a pattern from 1-8.
+The LEN (length) button changes the length of a pattern from 1-8.
 
 The FLIP button flips the on/off value of the first (bottom) note of a pattern.
 
-The ROT button rotates all the values and on/off states down with the bottom or first
+The ROT (rotate) button rotates all the values and on/off states down with the bottom or first
 rotating to the top value of the pattern.
 
-The RND button does a random draw for every active value of a pattern ignoring the PROB value (i.e. the probability is automatically triggered), but respects the BIAS for on/off draws.
+The RND (randomize) button does a random draw for every active value of a pattern ignoring the PROB value (i.e. the probability is automatically triggered), but respects the BIAS for on/off draws.
 
 LEDs color has the following meanings:
 
@@ -164,6 +164,8 @@ LOC is location in the full pattern. This is similar to intensity but instead of
 </span>
 
 Just having bass notes in the $A$ section and high notes in the $C$ section doesn't really achieve the rhythmic variety that is typical of an Indian tal. The Archane expansion over comes this by rotate the selected note insides a Norn across the other Norns following once again the $ABAC$ pattern. For example, the 1st note of the $A$ thread is the 1st note of the $A$ pattern, but it pulls the 2nd note from the $B$ pattern. If it can't get a note, it rotates into the defined pattern space in case of differing lengths.
+
+In an over generalization, the main Norns module is good for generative melody and the expansion Arachne is better for generative rhythm.
 
 CV, GATE and TRIG are outputs from the new rewoven pattern.
 
