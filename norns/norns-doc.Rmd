@@ -16,6 +16,8 @@ options(htmltools.dir.version = FALSE)
 
 _"I always wanted to be the least talented member of the band. That way I had to keep up.”_ --Dave Brubeck
 
+Source code available on [github.com](https://github.com/spgarbet/norn/).
+
 # Eris
 
 <span class="marginnote shownote">
@@ -187,6 +189,6 @@ Here's a [kitchen sink](assets/norns-kitchen-sink.vcv) demo module. ^[Kitchen Si
 
 # Copyright Notice
 
-All music tracks are copyright (c) 2025 by Shawn Garbett. All rights reserved.
+All music tracks are (c) Copyright 2025 Shawn Garbett. All rights reserved.
 
-Code is copyrighted as marked.
+Code is copyrighted as GPL-3. 
