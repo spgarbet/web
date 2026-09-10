@@ -489,6 +489,13 @@ function generateLFO(parameters, noiseStart = 0, randomWalkFrame = 0)
       const middle = height / 2;
     
       context.clearRect(0, 0, width, height);
+      
+      context.clearRect(0, 0, width, height);
+      context.beginPath();
+      context.moveTo(0, middle);
+      context.lineTo(width, middle);
+      context.strokeStyle="red";
+      context.stroke();
     
       context.beginPath();
       context.moveTo(0, middle-samples[0]*middle);
@@ -503,7 +510,7 @@ function generateLFO(parameters, noiseStart = 0, randomWalkFrame = 0)
     
         context.lineTo(x, y);
       }
-    
+      context.strokeStyle="black";
       context.stroke();
     }
 
