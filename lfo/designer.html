@@ -160,7 +160,7 @@
     <output id="fps-value">20</output>
   </div>
   
-  <button id="animate" type="button">Start Animation</button>
+  <button id="animate" type="button">Stop Animation</button>
   
   <div id="waveform-container">
     <canvas id="waveform" width="512" height="512"></canvas>
@@ -491,7 +491,7 @@ function generateLFO(parameters, noiseStart = 0, randomWalkFrame = 0)
       context.clearRect(0, 0, width, height);
     
       context.beginPath();
-      context.moveTo(0, middle);
+      context.moveTo(0, middle-samples[0]*middle);
     
       for (let x = 0; x < width; ++x)
       {
